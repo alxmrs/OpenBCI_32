@@ -6,10 +6,8 @@ Last README update: April 18 2015
 The default openBCI firmware, as of writing, doesn't send the timestamp of when the EEG sample data was recorded. All timestamps for the channel data are calculated at the time they are received by the computer. This is problematic because accurate timestamps are crucially important for EEG signal processing. This update sends a milliseconds count over the auxiliary data array instead of accelerometer data.
 
 The milliseconds count is produced by the millis() function, which stores the data as an unsigned long. This update breaks up the unsigned long in to a two element array of unsigned shorts (ChipKit stores values in Big Endian representation, so the MSB will be the rightmost byte).
-To best take advantage of this upgrade, consider using this python library:https://github.com/alxrsngrtn/OpenBCI_Python/tree/new_firmware
 
 To best take advantage of this upgrade, consider using this python library:
-
 https://github.com/alxrsngrtn/OpenBCI_Python/tree/new_firmware
 
 ## How to install
